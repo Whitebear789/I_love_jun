@@ -11,6 +11,7 @@ int main(){
     //vector<vector<int>> ans(city, vector<int> (city));
     int ans[city][city] = {0};
     int array[2] = {0};
+    //隣接リストの作成
     for(int i=0; i<road; i++){
         for(int j=0; j < 2; j++){
             cin >> array[j];
@@ -22,12 +23,14 @@ int main(){
     
     for(int i = 0; i < city; i++){
         count = 0;
+        //繋がっている都市の数を数える
         for(int j = 0; j < city; j++){
             if(ans[i][j] == 1){
                 count++;
             }
         }
         cout << count;
+        //繋がっている都市番号の出力
         for(int j = 0; j < city; j++){
             if(ans[i][j] == 1){
                 cout << " " << j + 1;
